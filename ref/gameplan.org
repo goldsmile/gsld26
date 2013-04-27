@@ -14,15 +14,45 @@
 *** ability to use the environment to get advantage???
 **** something like the power pill in pac-man?
 
-
-* [0/2] generic game engine (port from [[http://gamesketchlib.org/][gamesketchlib]] / [[http://flixel.org][flixel]])
-** TODO draw guys on screen
-*** ANSI-style art, using retroterm
+* colored text/terminal graphics
+** NOTE retroterm already supports text output
 : cd b4; make rxsdl
+** character set / colors
+http://en.wikipedia.org/wiki/Code_page_437
+http://en.wikipedia.org/wiki/ANSI_escape_code#Colors
+** drawing tools:
+http://picoe.ca/products/pablodraw/ - modern, uses mono
+http://www.syaross.org/thedraw/ - old, needs dosbox
+THEDRAW has the advantage of exporting to pascal source code.
+** ---------------------------------
+** TODO hook up color in retroterm
+The underlying support is there but it isn't exposed easily to pascal:
+Would prefer to mirror this API:
+https://github.com/tangentstorm/xpl/blob/master/code/vt.pas
+** TODO crt-like pascal API for retroterm
+*** right now we just have retro api (using devices)
+*** crt unit: (old-style turbo pascal)
+http://www.freepascal.org/docs-html/rtl/crt/index-5.html
+main things are the keyboard and mouse
+** TODO 256-colors (fansi/xterm)
+http://fansi.org/256Colors.aspx
+
+
+* [0/4] generic game engine (port from [[http://gamesketchlib.org/][gamesketchlib]] / [[http://flixel.org][flixel]])
+** TODO ansi/sprite engine
+*** TODO make sprites from ansi artwork
+Drawing a square ship and copying that to a sprite is probably easier than drawing the same square ship and then drawing it again rotated 90 degrees. We could just save a PNG file from pablodraw but it would be nice to just copy the sprite from the bitmap that retroterm already uses.
+
 ** TODO screenflow system (strategy design pattern)
 https://github.com/sabren/GameSketchLib/blob/master/source/java/org/gamesketchlib/GsState.java
 https://github.com/sabren/GameSketchLib/blob/master/source/java/org/gamesketchlib/_GsGame.java
-** TODO
+** TODO keyboard/mouse input
+*** again retroterm already handles this but no nice pascal API.
+*** worst case can use the plain SDL/ZenGL api
+*** would prefer to refactor so it looks like CRT's KeyPressed/Readkey
+*** see example implementation here:
+https://github.com/tangentstorm/xpl/blob/master/code/kbd.pas
+
 
 * [0/0] basic gameplay
 ** model the game as a 2d array (TGrid)
