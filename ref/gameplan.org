@@ -42,7 +42,6 @@ http://fansi.org/256Colors.aspx
 ** TODO ansi/sprite engine
 *** TODO make sprites from ansi artwork
 Drawing a square ship and copying that to a sprite is probably easier than drawing the same square ship and then drawing it again rotated 90 degrees. We could just save a PNG file from pablodraw but it would be nice to just copy the sprite from the bitmap that retroterm already uses.
-
 ** TODO screenflow system (strategy design pattern)
 https://github.com/sabren/GameSketchLib/blob/master/source/java/org/gamesketchlib/GsState.java
 https://github.com/sabren/GameSketchLib/blob/master/source/java/org/gamesketchlib/_GsGame.java
@@ -50,18 +49,32 @@ https://github.com/sabren/GameSketchLib/blob/master/source/java/org/gamesketchli
 *** again retroterm already handles this but no nice pascal API.
 *** worst case can use the plain SDL/ZenGL api
 *** would prefer to refactor so it looks like CRT's KeyPressed/Readkey
-*** see example implementation here:
-https://github.com/tangentstorm/xpl/blob/master/code/kbd.pas
+- see example implementation here:
+  https://github.com/tangentstorm/xpl/blob/master/code/kbd.pas
 
-
-* [0/0] basic gameplay
-** model the game as a 2d array (TGrid)
+* [0/4] basic gameplay
+** TODO model the game as a 2d array (TGrid)
 https://github.com/tangentstorm/xpl/blob/master/code/grids.pas
-** collision detection with walls
-easy, but also can grab from logic here:
-https://github.com/sabren/tetraminex/tree/master/src/com/tetraminex/core
+** TODO move ship with the keyboard
+- WASD / .AOE  keys (for dvorak)
+** TODO control shields with keyboard
+** TODO collision detection with walls
+- easy, but also can grab from logic here:
+  https://github.com/sabren/tetraminex/tree/master/src/com/tetraminex/core
+- see GridSprite.canMove()
+  https://github.com/sabren/tetraminex/blob/master/src/com/tetraminex/core/sprites/GridSprite.as
+- also Room.nudge()
+  https://github.com/sabren/tetraminex/blob/master/src/com/tetraminex/core/Room.as
+  (in retrospect, i'm not entirely convinced Room is the right place for this...)
 
-* [0/1] screens/levels
+* [0/2] AI for the enemy
+** TODO pathfinding
+http://qiao.github.io/PathFinding.js/visual/
+http://gamedev.tutsplus.com/tutorials/implementation/speed-up-a-star-pathfinding-with-the-jump-point-search-algorithm/
+** TODO line of sight test for tractor beam
+
+
+* [0/2] screens/levels
 ** TODO load levels into grid
 *** probably just use text files or hard-coded array for starters
 ** TODO maze generation algorithm
@@ -72,4 +85,8 @@ http://weblog.jamisbuck.org/2011/1/10/maze-generation-prim-s-algorithm
 http://weblog.jamisbuck.org/2011/1/3/maze-generation-kruskal-s-algorithm
 http://weblog.jamisbuck.org/2010/12/29/maze-generation-eller-s-algorithm
 http://weblog.jamisbuck.org/2010/12/27/maze-generation-recursive-backtracking
+
+* [0/2] --- ( low priority )----
+** TODO [#C] control shields with mouse too?
+** TODO [#C] make keyboard controls configurable
 
