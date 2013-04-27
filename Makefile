@@ -8,9 +8,10 @@ targets:
 sync:
 	git fetch
 	git submodule init
+	git submodule update
 	mkdir -p b4/gen
 	cd b4; make init
-	git submodule update
+
 
 retro:
 	cd b4; make retro
