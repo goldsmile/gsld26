@@ -4,6 +4,9 @@
 ** pacman style mazes, but no wraparound
 ** screens connect together like in zelda
 ** cat/mouse aspect
+*** goal is to reach the exit through the maze
+**** doesn't have to be a true maze
+**** ideally, algorithm doesn't create a lot of dead ends
 *** you are a little spaceship trying to evade capture
 *** you have thrusters + shield (with some directional abilities)
 *** guys chasing you have a tractor beam
@@ -11,9 +14,32 @@
 *** ability to use the environment to get advantage???
 **** something like the power pill in pac-man?
 
-* phase 1 : generic game engine (port from [[http://gamesketchlib.org/][gamesketchlib]] / [[http://flixel.org][flixel]])
-** TODO get guys on screen
-** TODO generic stuff
-*** screenflow system (strategy design pattern)
 
+* [0/2] generic game engine (port from [[http://gamesketchlib.org/][gamesketchlib]] / [[http://flixel.org][flixel]])
+** TODO draw guys on screen
+*** ANSI-style art, using retroterm
+: cd b4; make rxsdl
+** TODO screenflow system (strategy design pattern)
+https://github.com/sabren/GameSketchLib/blob/master/source/java/org/gamesketchlib/GsState.java
+https://github.com/sabren/GameSketchLib/blob/master/source/java/org/gamesketchlib/_GsGame.java
+** TODO
+
+* [0/0] basic gameplay
+** model the game as a 2d array (TGrid)
+https://github.com/tangentstorm/xpl/blob/master/code/grids.pas
+** collision detection with walls
+easy, but also can grab from logic here:
+https://github.com/sabren/tetraminex/tree/master/src/com/tetraminex/core
+
+* [0/1] screens/levels
+** TODO load levels into grid
+*** probably just use text files or hard-coded array for starters
+** TODO maze generation algorithm
+*** worst case: just one maze, like pac-man
+*** choose an algorithms (prefer one that doesn't make too many dead ends)
+some options:
+http://weblog.jamisbuck.org/2011/1/10/maze-generation-prim-s-algorithm
+http://weblog.jamisbuck.org/2011/1/3/maze-generation-kruskal-s-algorithm
+http://weblog.jamisbuck.org/2010/12/29/maze-generation-eller-s-algorithm
+http://weblog.jamisbuck.org/2010/12/27/maze-generation-recursive-backtracking
 
