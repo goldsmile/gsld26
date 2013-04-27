@@ -1,0 +1,19 @@
+#+title: gsld26 gameplan (theme: minimalism)
+
+* game concept
+** pacman style mazes, but no wraparound
+** screens connect together like in zelda
+** cat/mouse aspect
+*** you are a little spaceship trying to evade capture
+*** you have thrusters + shield (with some directional abilities)
+*** guys chasing you have a tractor beam
+*** no guns, just chasing/hiding (they want you alive)
+*** ability to use the environment to get advantage???
+**** something like the power pill in pac-man?
+
+* phase 1 : generic game engine (port from [[http://gamesketchlib.org/][gamesketchlib]] / [[http://flixel.org][flixel]])
+** TODO get guys on screen
+** TODO generic stuff
+*** screenflow system (strategy design pattern)
+
+
