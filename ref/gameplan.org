@@ -86,7 +86,26 @@ http://weblog.jamisbuck.org/2011/1/3/maze-generation-kruskal-s-algorithm
 http://weblog.jamisbuck.org/2010/12/29/maze-generation-eller-s-algorithm
 http://weblog.jamisbuck.org/2010/12/27/maze-generation-recursive-backtracking
 
+* [0/1] Sound Effects / Music
+** TODO play a sound effect
+just use sdl/zen api for now
+** TODO thrust sound
+** TODO tractor beam sound
+** TODO background music/sounds
+
+* [0/2] game design issues
+** TODO what does the shield actually do, if there are no guns?
+*** option: give hero a tractor beam instead?
+*** option: give enemies guns/weapons?
+*** option: have other things moving in the background that you can deflect?
+** TODO what counteracts the tractor beam?
+*** option: nothing, just run (so it's a stealth game)
+*** ???
+
 * [0/2] --- ( low priority )----
 ** TODO [#C] control shields with mouse too?
 ** TODO [#C] make keyboard controls configurable
-
+** TODO wrap SDL/ZenGL audio in common retro-compatible API
+** TODO eventually want to play mod/midi files directly
+https://github.com/badsector/pasaudio
+https://github.com/badsector/fmp
