@@ -1,0 +1,15 @@
+*~
+*#
+*.#*
+*.o
+*.ppu
+*.pyc
+*.exe
+gen
+app/backup
+app/lib
+library
+pre/pre_gen.pas
+./retro
+
+run-tests.pas
