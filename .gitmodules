@@ -1,0 +1,3 @@
+[submodule "b4"]
+	path = b4
+	url = git@github.com:sabren/b4.git
