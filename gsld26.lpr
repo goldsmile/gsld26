@@ -2,8 +2,9 @@
 program gsld26;
 {$mode objfpc}{$H+}
 
-uses ng, rxgl_sdl;
+uses ng, rxgl_sdl, game;
 
 begin
+  game.main;
 end.
 
