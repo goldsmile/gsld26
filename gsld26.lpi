@@ -53,7 +53,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjPath)/b4/lib/xpl/code;$(ProjOutDir)"/>
-      <OtherUnitFiles Value="$(ProjPath)/b4/ng;$(ProjPath)/b4/lib/xpl/code;$(ProjPath)/b4/lib/aggpas/Source"/>
+      <OtherUnitFiles Value="$(ProjPath)/b4/ng;$(ProjPath)/b4/lib/xpl/code;$(ProjPath)/b4/lib/aggpas/Source;$(ProjPath)/b4/lib/zengl/headers;$(ProjPath)/b4/lib/zengl/extra;$(ProjPath)/b4/lib/zengl/src;$(ProjPath)/b4/lib/zengl/lib/jpeg/$(TargetCPU)-$(TargetOS);$(ProjPath)/b4/lib/zengl/lib/ogg/$(TargetCPU)-$(TargetOS);$(ProjPath)/b4/lib/zengl/lib/zlib/$(TargetCPU)-$(TargetOS);$(ProjPath)/b4/lib/zengl/lib/zip/$(TargetCPU)-$(TargetOS);$(ProjPath)/b4/lib/zengl/lib/theora/$(TargetCPU)-$(TargetOS)"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Other>
